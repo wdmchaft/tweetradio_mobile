@@ -2,7 +2,7 @@
 //  main.m
 //  tweetradio_mobile
 //
-//  Created by will bailey on 11/7/09.
+//  Created by will bailey on 11/8/09.
 //  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
