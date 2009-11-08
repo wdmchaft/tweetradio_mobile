@@ -7,21 +7,34 @@
 //
 
 #import "tweetradio_mobileAppDelegate.h"
-
+#import "RootViewController.h"
 
 @implementation tweetradio_mobileAppDelegate
 
 @synthesize window;
-
+@synthesize navigationController;
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
-    // Override point for customization after app launch    
+	
+	RootViewController *rootViewController = [[RootViewController alloc] initWithStyle:UITableViewStylePlain];
+	NSManagedObjectContext *context = [self managedObjectContext];
+	if (!context) {
+		// Handle the error
+	}
+		
+	rootViewController.managedObjectContext = context;
 
+	UINavigationController * aNavigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+	self.navigationController = aNavigationController;
+	[window addSubview:[navigationController view]];
+	
+    // Override point for customization after app launch    
 	[window makeKeyAndVisible];
+	[rootViewController release];
+	[aNavigationController release];
 }
 
 /**
