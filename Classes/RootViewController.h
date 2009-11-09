@@ -19,4 +19,6 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) UIBarButtonItem *fetchTweetsButton;
 
+- (void)fetchTweets;
+
 @end

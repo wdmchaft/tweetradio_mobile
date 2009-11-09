@@ -34,6 +34,12 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)fetchTweets {
+  UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Have you heard the bird?" message: @"This will request the tweets" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+  [someError show];
+  [someError release];
+}
+
 /*
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
