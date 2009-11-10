@@ -2,39 +2,32 @@
 //  tweetradio_mobileAppDelegate.m
 //  tweetradio_mobile
 //
-//  Created by will bailey on 11/8/09.
+//  Created by will bailey on 11/9/09.
 //  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
 #import "tweetradio_mobileAppDelegate.h"
 #import "RootViewController.h"
 
+
 @implementation tweetradio_mobileAppDelegate
 
 @synthesize window;
 @synthesize navigationController;
 
+
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-	
-	RootViewController *rootViewController = [[RootViewController alloc] initWithStyle:UITableViewStylePlain];
-	NSManagedObjectContext *context = [self managedObjectContext];
-	if (!context) {
-		// Handle the error
-	}
-		
-	rootViewController.managedObjectContext = context;
-
-	UINavigationController * aNavigationController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-	self.navigationController = aNavigationController;
-	[window addSubview:[navigationController view]];
-	
+    
     // Override point for customization after app launch    
-	[window makeKeyAndVisible];
-	[rootViewController release];
-	[aNavigationController release];
+
+	RootViewController *rootViewController = (RootViewController *)[navigationController topViewController];
+	rootViewController.managedObjectContext = self.managedObjectContext;
+	
+	[window addSubview:[navigationController view]];
+    [window makeKeyAndVisible];
 }
 
 /**
@@ -146,6 +139,7 @@
     [managedObjectModel release];
     [persistentStoreCoordinator release];
     
+	[navigationController release];
 	[window release];
 	[super dealloc];
 }

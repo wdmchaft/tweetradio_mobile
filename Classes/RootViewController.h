@@ -2,23 +2,16 @@
 //  RootViewController.h
 //  tweetradio_mobile
 //
-//  Created by will bailey on 11/8/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
+//  Created by will bailey on 11/9/09.
+//  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-
-@interface RootViewController : UITableViewController {
-
+@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate> {
+	NSFetchedResultsController *fetchedResultsController;
 	NSManagedObjectContext *managedObjectContext;
-	UIBarButtonItem *fetchTweetsButton;
-	
 }
 
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) UIBarButtonItem *fetchTweetsButton;
-
-- (void)fetchTweets;
 
 @end
