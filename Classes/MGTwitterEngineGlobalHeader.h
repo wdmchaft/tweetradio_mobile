@@ -14,7 +14,7 @@
 	#import <Foundation/Foundation.h>
 	#import <UIKit/UIKit.h>
 #else
-	#import <Cocoa/Cocoa.h>
+
 #endif
 
 /*
@@ -48,4 +48,4 @@
  target.
 */
 
-#define YAJL_AVAILABLE 1
+#define YAJL_AVAILABLE 0

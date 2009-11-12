@@ -12,11 +12,10 @@
 @implementation RootViewController
 
 @synthesize fetchedResultsController, managedObjectContext;
-
+@synthesize twitter;
 
 #pragma mark -
 #pragma mark View lifecycle
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +27,8 @@
     self.navigationItem.rightBarButtonItem = addButton;
     [addButton release];
 	
+//	twitter = [[Twitter alloc] initWithUsername:@"will_bailey" andPassword:@"r1chmond" andDelegate:self];
+
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		/*
@@ -73,6 +74,10 @@
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
  */
+
+- (void) didReceiveStatuses:(NSArray *) statuses{
+	NSLog(@"Statuses Made it to Root View Controller:\r%@", statuses);
+}
 
 
 #pragma mark -

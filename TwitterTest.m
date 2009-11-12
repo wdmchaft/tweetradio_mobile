@@ -2,33 +2,21 @@
 //  TwitterTest.m
 //  tweetradio_mobile
 //
-//  Created by will bailey on 11/10/09.
+//  Created by will bailey on 11/11/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+#import "TwitterTest.h"
 
 
 @implementation TwitterTest
 
-#if USE_APPLICATION_UNIT_TEST     // all code under test is in the iPhone Application
-
-- (void) testAppDelegate {
-    
-    id yourApplicationDelegate = [[UIApplication sharedApplication] delegate];
-    STAssertNotNil(yourApplicationDelegate, @"UIApplication failed to find the AppDelegate");
-    
+- (void) testInitWithUserNameAndPassword {
+	Twitter *twitter = [[Twitter alloc] initWithUsername:@"johndoe" andPassword:@"123456"];
+	STAssertEqualObjects(twitter.username, @"johndoe", @"expected %@ but got %@", twitter.username, @"johndoe");
+	STAssertEqualObjects(twitter.password, @"123456", @"expected %@ but got %@", twitter.username, @"123456");
+	[twitter release];
 }
-
-#else                           // all code under test must be linked into the Unit Test bundle
-
-- (void) testMath {
-    
-    STAssertTrue((1+1)==2, @"Compiler isn't feeling well today :-(" );
-    
-}
-
-
-#endif
 
 
 @end

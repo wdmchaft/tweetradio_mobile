@@ -15,7 +15,6 @@
 @synthesize window;
 @synthesize navigationController;
 
-
 #pragma mark -
 #pragma mark Application lifecycle
 
