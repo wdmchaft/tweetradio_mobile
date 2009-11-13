@@ -18,7 +18,6 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		BE8C5E5510AA638C00B2427C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C5E5410AA638C00B2427C /* libxml2.dylib */; };
-		BE8C5E5710AA63A500B2427C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C5E5610AA63A500B2427C /* libxml2.dylib */; };
 		BE8C5EA110AA75DD00B2427C /* libYAJLIPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C5EA010AA75DD00B2427C /* libYAJLIPhone.a */; };
 		BE8C5EA210AA75DD00B2427C /* libYAJLIPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C5EA010AA75DD00B2427C /* libYAJLIPhone.a */; };
 		BE8C5EC910AA772000B2427C /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C5EC810AA772000B2427C /* Twitter.m */; };
@@ -44,7 +43,8 @@
 		BE8C606E10AA8C0200B2427C /* MGTwitterSearchYAJLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C604110AA8C0200B2427C /* MGTwitterSearchYAJLParser.m */; };
 		BE8C606F10AA8C0200B2427C /* NSString+UUID.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C604410AA8C0200B2427C /* NSString+UUID.m */; };
 		BE8C607010AA8C0200B2427C /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C604610AA8C0200B2427C /* NSData+Base64.m */; };
-		BE8C607110AA8C0200B2427C /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8C604710AA8C0200B2427C /* libxml2.dylib */; };
+		BE8C619010AD08D300B2427C /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C618F10AD08D300B2427C /* Tweet.m */; };
+		BE8C619110AD08D300B2427C /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8C618F10AD08D300B2427C /* Tweet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,7 @@
 		1D3623250D0F684500981E51 /* tweetradio_mobileAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tweetradio_mobileAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* tweetradio_mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweetradio_mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28860B760F44E54D00985440 /* tweetradio_mobile.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = tweetradio_mobile.xcdatamodel; sourceTree = "<group>"; };
+		28860B760F44E54D00985440 /* tweetradio_mobile.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; name = tweetradio_mobile.xcdatamodel; path = ../tweetradio_mobile.xcdatamodel; sourceTree = "<group>"; };
 		28860BE40F44EE6400985440 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2899E55F0DE3E45000AC0155 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
@@ -117,7 +117,8 @@
 		BE8C604410AA8C0200B2427C /* NSString+UUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UUID.m"; sourceTree = "<group>"; };
 		BE8C604510AA8C0200B2427C /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		BE8C604610AA8C0200B2427C /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
-		BE8C604710AA8C0200B2427C /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libxml2.dylib; sourceTree = "<group>"; };
+		BE8C618E10AD08D300B2427C /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		BE8C618F10AD08D300B2427C /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,9 +131,7 @@
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
 				28860BE50F44EE6400985440 /* CoreData.framework in Frameworks */,
 				BE8C5E5510AA638C00B2427C /* libxml2.dylib in Frameworks */,
-				BE8C5E5710AA63A500B2427C /* libxml2.dylib in Frameworks */,
 				BE8C5EA210AA75DD00B2427C /* libYAJLIPhone.a in Frameworks */,
-				BE8C607110AA8C0200B2427C /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +149,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE8C618910AD089900B2427C /* Model */,
 				BE8C601610AA8C0200B2427C /* MATwitterEngine */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
@@ -197,7 +197,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				28860B760F44E54D00985440 /* tweetradio_mobile.xcdatamodel */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* tweetradio_mobile-Info.plist */,
@@ -238,7 +237,6 @@
 				BE8C601810AA8C0200B2427C /* MGTwitterEngine.h */,
 				BE8C601910AA8C0200B2427C /* MGTwitterEngine.m */,
 				BE8C601A10AA8C0200B2427C /* MGTwitterEngineDelegate.h */,
-				BE8C604710AA8C0200B2427C /* libxml2.dylib */,
 				BE8C601B10AA8C0200B2427C /* MGTwitterHTTPURLConnection.h */,
 				BE8C601C10AA8C0200B2427C /* MGTwitterHTTPURLConnection.m */,
 				BE8C601D10AA8C0200B2427C /* MGTwitterRequestTypes.h */,
@@ -309,6 +307,16 @@
 				BE8C604610AA8C0200B2427C /* NSData+Base64.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		BE8C618910AD089900B2427C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28860B760F44E54D00985440 /* tweetradio_mobile.xcdatamodel */,
+				BE8C618E10AD08D300B2427C /* Tweet.h */,
+				BE8C618F10AD08D300B2427C /* Tweet.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +447,7 @@
 				BE8C606E10AA8C0200B2427C /* MGTwitterSearchYAJLParser.m in Sources */,
 				BE8C606F10AA8C0200B2427C /* NSString+UUID.m in Sources */,
 				BE8C607010AA8C0200B2427C /* NSData+Base64.m in Sources */,
+				BE8C619010AD08D300B2427C /* Tweet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +457,7 @@
 			files = (
 				BE8C5ECA10AA772000B2427C /* Twitter.m in Sources */,
 				BE8C5F5D10AA7DD500B2427C /* TwitterTest.m in Sources */,
+				BE8C619110AD08D300B2427C /* Tweet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

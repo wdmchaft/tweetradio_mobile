@@ -27,8 +27,9 @@
     self.navigationItem.rightBarButtonItem = addButton;
     [addButton release];
 	
-//	twitter = [[Twitter alloc] initWithUsername:@"will_bailey" andPassword:@"r1chmond" andDelegate:self];
-
+    twitter = [[Twitter alloc] initWithUsername:@"will_bailey" andPassword:@"r1chmond" andDelegate:self];
+	[twitter getPublicTimeline];
+	
 	NSError *error = nil;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		/*
@@ -76,7 +77,19 @@
  */
 
 - (void) didReceiveStatuses:(NSArray *) statuses{
-	NSLog(@"Statuses Made it to Root View Controller:\r%@", statuses);
+//	NSLog(@"Statuses Made it to Root View Controller:\r%@", statuses);
+	for (int x=0; x<statuses.count; x++) {
+		NSDictionary *tweetData = [statuses objectAtIndex:x]; 
+		NSLog(@"text %@",[tweetData valueForKey:@"text"]);
+		NSManagedObjectContext *context = [fetchedResultsController managedObjectContext];
+		NSEntityDescription *entity = [[fetchedResultsController fetchRequest] entity];
+		NSManagedObject *tweet = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+		[tweet setValue:[tweetData valueForKey:@"text"] forKey:@"text"];
+		NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+		NSNumber *tweetId = [numberFormatter numberFromString:[tweetData valueForKey:@"id"]];
+		[tweet setValue:tweetId forKey:@"id"];
+	}
+	
 }
 
 
@@ -90,20 +103,20 @@
 	NSEntityDescription *entity = [[fetchedResultsController fetchRequest] entity];
 	NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
 	
-	// If appropriate, configure the new managed object.
-	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
-	
-	// Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		 */
-		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		abort();
-    }
+//	// If appropriate, configure the new managed object.
+//	[newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+//	
+//	// Save the context.
+//    NSError *error = nil;
+//    if (![context save:&error]) {
+//		/*
+//		 Replace this implementation with code to handle the error appropriately.
+//		 
+//		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+//		 */
+//		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//		abort();
+//    }
 }
 
 
@@ -133,7 +146,7 @@
     
 	// Configure the cell.
 	NSManagedObject *managedObject = [fetchedResultsController objectAtIndexPath:indexPath];
-	cell.textLabel.text = [[managedObject valueForKey:@"timeStamp"] description];
+	cell.textLabel.text = [[managedObject valueForKey:@"text"] description];
 	
     return cell;
 }
@@ -205,14 +218,14 @@
 	// Create the fetch request for the entity.
 	NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
 	// Edit the entity name as appropriate.
-	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Event" inManagedObjectContext:managedObjectContext];
+	NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tweet" inManagedObjectContext:managedObjectContext];
 	[fetchRequest setEntity:entity];
 	
 	// Set the batch size to a suitable number.
 	[fetchRequest setFetchBatchSize:20];
 	
 	// Edit the sort key as appropriate.
-	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id" ascending:NO];
 	NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
 	
 	[fetchRequest setSortDescriptors:sortDescriptors];

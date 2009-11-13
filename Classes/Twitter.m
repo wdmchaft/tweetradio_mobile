@@ -17,6 +17,7 @@
 	if (self = [super init]){
 		username=usernameArg;
 		password=passwordArg;
+		delegate=delegateArg;
 		twitterEngine = [[MGTwitterEngine alloc] initWithDelegate:self];
 		[twitterEngine setUsername:username password:password];
 	}
